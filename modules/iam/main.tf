@@ -133,7 +133,6 @@ resource "aws_iam_policy" "ecs_service_elb" {
   name        = "ecs-service-elb-policy"
   path        = "/"
   description = "Allow access to the service ELB"
-
   policy = data.aws_iam_policy_document.ecs_service_elb.json
 }
 
@@ -142,7 +141,6 @@ resource "aws_iam_policy" "ecs_service_standard" {
   name        = "ecs-service-standard-policy"
   path        = "/"
   description = "Allow standard ECS actions"
-
   policy = data.aws_iam_policy_document.ecs_service_standard.json
 }
 
@@ -151,7 +149,6 @@ resource "aws_iam_policy" "ecs_service_scaling" {
   name        = "ecs-service-scaling-policy"
   path        = "/"
   description = "Allow ECS service scaling"
-
   policy = data.aws_iam_policy_document.ecs_service_scaling.json
 }
 
@@ -160,7 +157,6 @@ resource "aws_iam_policy" "ecr_pull_policy" {
   name        = "ecr-pull-policy"
   path        = "/"
   description = "Allow ECS tasks to pull images from ECR"
-
   policy = data.aws_iam_policy_document.ecr_pull_policy.json
 }
 

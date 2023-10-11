@@ -1,8 +1,11 @@
-provider "aws" {
-  version = "~> 3.0"
-  region = var.region
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
 }
-
 /*
 module "s3_dynamodb_locks" {
   source      = "../../../modules/s3_dynamodb_locks"
@@ -42,8 +45,8 @@ module "ecs" {
   ecs_target_group    = module.elb.ecs_target_group
   container_image_url = var.container_image_url
   container_image_tag = var.container_image_tag
-  container_name = var.container_name
-  container_port = var.container_port
+  container_name      = var.container_name
+  container_port      = var.container_port
 
 }
 
