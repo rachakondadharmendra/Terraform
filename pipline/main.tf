@@ -23,6 +23,5 @@ module "code-pipeline" {
 module "codebuild" {
   source = "./modules/codebuild"
   cicd_build_role = module.iam-pipeline.cicd_build_role
-  env = "stage"
 }
 
