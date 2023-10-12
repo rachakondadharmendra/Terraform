@@ -6,20 +6,7 @@ terraform {
     }
   }
 }
-/*
-module "s3_dynamodb_locks" {
-  source      = "../../../modules/s3_dynamodb_locks"
-  s3_bucket_name = var.s3_bucket_name
-  dynamodb_table_name  = var.dynamodb_table_name
-}
 
-
-module "ecr" {
-  source   = "../../../modules/ecr"
-  ecr_repo = "ecommerce_demo"
-
-}
-*/
 
 module "vpc" {
   source = "../../../modules/vpc"
@@ -47,7 +34,6 @@ module "ecs" {
   container_image_tag = var.container_image_tag
   container_name      = var.container_name
   container_port      = var.container_port
-
 }
 
 module "auto_scaling" {
